@@ -1,0 +1,15 @@
+@charset "URF-8";
+
+body{
+    background: linear-gradient(0deg, #1E1732, #1E1732),linear-gradient(180deg, #15083E 0%, #2E0F58 75%, #461571 100%);
+}
+header{
+    padding:28px 18px 33px;
+}
+main{
+    padding: 0 18px;
+}
+main a{
+    display: block;
+    margin-bottom: 16px;
+}
