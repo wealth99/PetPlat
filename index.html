@@ -10,24 +10,244 @@
 <body>
     <div id="wrap">
         <header>
-            <img src="assets/image/1.png" alt="">
+            <img src="assets/image/main1/1.png" alt="" class="scroll-eff">
+            <button type="button" class="down-btn scroll-eff"><img src="assets/image/main1/1-1.png" alt=""></button>
+            <p class="h-bnr"><img src="assets/image/main1/5.png" alt=""></p>
         </header>
         <main>
-            <a href=""><img src="assets/image/2.png" alt=""></a>
-            <a href=""><img src="assets/image/3.png" alt=""></a>
-            <a href=""><img src="assets/image/4.png" alt=""></a>
-            <a href=""><img src="assets/image/5.png" alt=""></a>
-            <a href=""><img src="assets/image/6.png" alt=""></a>
-            <a href=""><img src="assets/image/7.png" alt=""></a>
-            <a href=""><img src="assets/image/8.png" alt=""></a>
-            <a href=""><img src="assets/image/9.png" alt=""></a>
-            <a href=""><img src="assets/image/10.png" alt=""></a>
-            <a href=""><img src="assets/image/11.png" alt=""></a>
+            <button type="button" class="close-btn"><img src="assets/image/main1/2.png" alt=""></button>
+            <div class="main-box">
+                <a href=""><img src="assets/image/main1/3.png" alt=""></a>
+                <a href=""><img src="assets/image/main1/4.png" alt=""></a>
+                <a href="" class="trigger-pop"><img src="assets/image/main1/5.png" alt=""></a>
+                <a href=""><img src="assets/image/main1/6.png" alt=""></a>
+                <a href=""><img src="assets/image/main1/7.png" alt=""></a>
+                <a href=""><img src="assets/image/main1/8.png" alt=""></a>
+                <a href=""><img src="assets/image/main1/9.png" alt=""></a>
+                <a href=""><img src="assets/image/main1/10.png" alt=""></a>
+                <a href=""><img src="assets/image/main1/11.png" alt=""></a>
+            </div>
+            <div class="open-pop">
+                <button type="button"><img src="assets/image/main1/13.png" alt=""></button>
+            </div>
+
+            <div class="box1">
+                <img src="assets/image/main1/14.png" alt="" class="box1-top">
+                <img src="assets/image/main1/close.png" alt="" class="box1-close">
+
+                <div class="box1-in">
+                    <img src="assets/image/main1/15.png" alt="">
+                    <button type="button"><img src="assets/image/main1/16.png" alt="">꼬미 사진자랑하기</button>
+                </div>
+
+                <img src="assets/image/main1/17.png" alt="" class="box1-bottom">
+
+                <button type="button" class="box1-pop1"><img src="assets/image/main1/18.png" alt=""></button>
+
+                <div class="box1-pop2">
+                    <button type="button"><img src="assets/image/main1/19.png" alt=""><img src="assets/image/main1/20.png" alt=""></button>
+                </div>
+
+                <div class="box1-pop3">
+                    <button type="button"><img src="assets/image/main1/21.png" alt=""></button>
+                </div>
+
+                <div class="box1-pop4">
+                    <img src="assets/image/main1/22.png" alt="">
+                    <img src="assets/image/main1/close.png" alt="" class="box1-close">
+                    <p><img src="assets/image/main1/24.png" alt=""></p>
+                    <button type="button">
+                        <img src="assets/image/main1/23.png" alt="">
+                    </button>
+                </div>
+
+                <div class="box1-pop5">
+                    <img src="assets/image/main1/25.png" alt="">
+                    <button type="button"><img src="assets/image/main1/close.png" alt="" class="box1-close"></button>
+                </div>
+            </div>
         </main>
         <footer>
-            <a href=""><img src="assets/image/12.png" alt=""></a>
+            <p class="gnb-m"><img src="assets/image/main1/12.png" alt=""></p>
         </footer>
     </div>
     <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+<script>
+const headerbanner = () => {
+    const banner = document.querySelector(".h-bnr");
+
+    window.addEventListener("scroll", function () {
+    if (window.scrollY > 0 && banner && !banner.classList.contains("hidden")) {
+        banner.classList.add("hidden");
+    }
+    });
+}
+
+const scrolleff = () => {
+    const items = document.querySelectorAll(".scroll-eff");
+
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const el = entry.target;
+                    const index = Array.from(items).indexOf(el);
+                    el.style.transitionDelay = `${index * 0.1}s`;
+                    el.classList.add("show");
+                    observer.unobserve(el);
+                }
+            });
+        },
+        {
+            threshold: 0.01
+        }
+    );
+
+    items.forEach(item => {
+        observer.observe(item);
+    });
+};
+
+const popClose = () => {
+    const btn = document.querySelector('.close-btn');
+    const mainBox = document.querySelector('.main-box');
+
+    btn.addEventListener('click', () => {
+        btn.classList.add('hide');
+        setTimeout(() => {
+            btn.style.display = 'none';
+            const offset = 30;
+            const target = mainBox.getBoundingClientRect().top + window.scrollY - offset;
+
+            scrollToSlow(target, 30);
+        }, 300);
+    });
+};
+
+const scrollToCloseBtn = () => {
+    const downBtn = document.querySelector('.down-btn.scroll-eff');
+    const closeBtn = document.querySelector('.close-btn');
+
+    if (!downBtn || !closeBtn) return;
+
+    downBtn.addEventListener('click', () => {
+        const offset = 30;
+        const target = closeBtn.getBoundingClientRect().top + window.scrollY - offset;
+        scrollToSlow(target, 30);
+    });
+};
+
+function scrollToSlow(targetY, speed = 20) {
+    const currentY = window.scrollY;
+    const distance = targetY - currentY;
+    let step = distance / speed;
+
+    function scroll() {
+        const newY = window.scrollY + step;
+
+        if ((step > 0 && newY >= targetY) || (step < 0 && newY <= targetY)) {
+            window.scrollTo(0, targetY);
+            return;
+        }
+
+        window.scrollTo(0, newY);
+        requestAnimationFrame(scroll);
+    }
+
+    requestAnimationFrame(scroll);
+}
+
+const openPopOnScroll = () => {
+    const trigger = document.querySelector('.trigger-pop');
+    const openPop = document.querySelector('.open-pop');
+    let shown = false;
+
+    if (!trigger || !openPop) return;
+
+    const checkVisibility = () => {
+        const rect = trigger.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top < windowHeight / 4.5 && !shown) {
+            openPop.style.display = 'flex';
+            openPop.classList.add('fade-in');
+            shown = true;
+        }
+    };
+
+    window.addEventListener('scroll', checkVisibility);
+    window.addEventListener('load', checkVisibility);
+};
+
+const openPopBox1 = () => {
+    const btn = document.querySelector('.open-pop button');
+    const pop = document.querySelector('.open-pop');
+    const box1 = document.querySelector('.box1');
+    const box1In = document.querySelector('.box1-in');
+    const box1Inbtn = document.querySelector('.box1-in button');
+    const box1pop1Btn = document.querySelector('.box1-pop1');
+    const box1pop2wrap = document.querySelector('.box1-pop2');
+    const box1pop3wrap = document.querySelector('.box1-pop3');
+    const box1pop4wrap = document.querySelector('.box1-pop4');
+    const box1pop5wrap = document.querySelector('.box1-pop5');
+    
+
+    btn.addEventListener('click', () => {
+        box1.classList.add('on');
+
+        setTimeout(() => {
+            box1In.classList.add('on');
+        }, 500);
+    });
+
+    box1Inbtn.addEventListener('click', () => {
+        box1Inbtn.classList.add('on');
+
+        setTimeout(() => {
+            box1pop1Btn.classList.add('on');
+        }, 400);
+    });
+
+    box1pop1Btn.addEventListener('click', () => {
+        box1pop2wrap.classList.add('on');
+    });
+
+    box1pop2wrap.addEventListener('click', () => {
+        box1pop2wrap.classList.remove('on');
+        box1pop1Btn.classList.remove('on');
+
+        box1In.addEventListener('click', () => {
+            box1pop3wrap.classList.add('on');
+        });
+    });
+
+    box1pop3wrap.addEventListener('click', () => {
+        box1pop3wrap.classList.remove('on');
+        box1pop4wrap.classList.add('on');
+    });
+
+    box1pop4wrap.addEventListener('click', () => {
+        box1pop5wrap.classList.add('on');
+        box1pop4wrap.classList.remove('on');
+    });
+
+    box1pop5wrap.addEventListener('click', e => {
+        box1pop5wrap.classList.remove('on');
+        box1.classList.remove('on');
+        pop.classList.remove('fade-in');
+        openPop.style.display = 'none';
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    headerbanner();
+    scrolleff();
+    popClose();
+    scrollToCloseBtn();
+    openPopOnScroll();
+    openPopBox1();
+});
+</script>
