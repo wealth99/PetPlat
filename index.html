@@ -9,34 +9,154 @@
 </head>
 <body>
     <div id="wrap">
-        <header>
-            <img src="assets/image/main1/1.png" alt="" class="scroll-eff">
-            <button type="button" class="down-btn scroll-eff"><img src="assets/image/main1/1-1.png" alt=""></button>
-            <p class="h-bnr"><img src="assets/image/main1/5.png" alt=""></p>
+        <header class="gnb-m">
+            <img src="assets/image/main1/12.png" alt="">
         </header>
-        <main>
-            <button type="button" class="close-btn"><img src="assets/image/main1/2.png" alt=""></button>
-            <div class="main-box">
-                <div class="tab">
-                    <a href=""><img src="assets/image/main1/tab_h.png" alt=""></a>
-                    <ul>
-                        <li><a href=""><img src="assets/image/main1/tab1.png" alt=""></a></li>
-                        <li><a href=""><img src="assets/image/main1/tab2.png" alt=""></a></li>
-                        <li><a href=""><img src="assets/image/main1/tab3.png" alt=""></a></li>
-                        <li><a href=""><img src="assets/image/main1/tab4.png" alt=""></a></li>
-                        <li><a href=""><img src="assets/image/main1/tab5.png" alt=""></a></li>
-                    </ul>
-                </div>
 
-                <a href=""><img src="assets/image/main1/4.png" alt=""></a>
-                <a href="" class="trigger-pop"><img src="assets/image/main1/5.png" alt=""></a>
-                <a href=""><img src="assets/image/main1/6.png" alt=""></a>
-                <a href=""><img src="assets/image/main1/7.png" alt=""></a>
-                <a href="" class="box3-btn"><img src="assets/image/main1/8.png" alt=""></a>
-                <a href="#" class="box2-btn"><img src="assets/image/main1/9.png" alt=""></a>
-                <a href=""><img src="assets/image/main1/10.png" alt=""></a>
-                <a href=""><img src="assets/image/main1/11.png" alt=""></a>
+        <main>
+            <div class="info">
+                <img src="assets/image/main1/1.png" alt="" class="scroll-eff">
+                <button type="button" class="down-btn scroll-eff"><img src="assets/image/main1/1-1.png" alt=""></button>
+                <p class="h-bnr"><img src="assets/image/main1/5.png" alt=""></p>
             </div>
+
+            <div class="main-box">
+                <button type="button" class="close-btn"><img src="assets/image/main1/2.png" alt=""></button>
+
+                <div class="tab-container" id="main-tabs">
+                    <ul role="tablist" class="full">
+                        <li role="presentation">
+                            <button type="button" id="main-tabs-tab-1" role="tab" aria-selected="true" aria-controls="main-tabs-panel-1" tabindex="0">우리집</button>
+                        </li>
+                        <li role="presentation">
+                            <button type="button" id="main-tabs-tab-2" role="tab" aria-selected="false" aria-controls="main-tabs-panel-2" tabindex="-1">옆집</button>
+                        </li>
+                    </ul>
+
+                    <div class="utils">
+                        <span>알람</span>
+                        <span>검색</span>
+                    </div>
+
+                    <div class="tab-panels">
+                        <!--  우리집 -->
+                        <div id="main-tabs-panel-1" class="house" role="tabpanel" aria-labelledby="main-tabs-tab-1" tabindex="0">
+
+                            <!-- 서브 탭 -->
+                            <div class="tab-container" id="sub-tabs">
+                                <ul role="tablist">
+                                    <li role="presentation">
+                                        <button type="button" id="sub-tabs-tab-1" role="tab" aria-selected="true" aria-controls="sub-tabs-panel-1" tabindex="0">
+                                            <img src="assets/image/main1/tab1.png" alt="">
+                                        </button>
+                                    </li>
+                                    <li role="presentation">
+                                        <button type="button" id="sub-tabs-tab-2" role="tab" aria-selected="false" aria-controls="sub-tabs-panel-2" tabindex="-1">
+                                            <img src="assets/image/main1/tab2.png" alt="" >
+                                        </button>
+                                    </li>
+                                    <li role="presentation">
+                                        <button type="button" id="sub-tabs-tab-3" role="tab" aria-selected="false" aria-controls="sub-tabs-panel-3" tabindex="-1">
+                                            <img src="assets/image/main1/tab3.png" alt="">
+                                        </button>
+                                    </li>
+                                    <li role="presentation">
+                                        <button type="button" id="sub-tabs-tab-4" role="tab" aria-selected="false" aria-controls="sub-tabs-panel-4" tabindex="-1">
+                                            <img src="assets/image/main1/tab4.png" alt="">
+                                        </button>
+                                    </li>
+                                    <li role="presentation">
+                                        <button type="button" id="sub-tabs-tab-5" role="tab" aria-selected="false" aria-controls="sub-tabs-panel-5" tabindex="-1">
+                                             <img src="assets/image/main1/tab5.png" alt="">
+                                        </button>
+                                    </li>
+                                </ul>
+                                <div class="tab-panels">
+                                    <!-- 숙제 -->
+                                    <div id="sub-tabs-panel-1" role="tabpanel" aria-labelledby="sub-tabs-tab-1" tabindex="0">
+                                        <a href=""><img src="assets/image/main1/4.png" alt=""></a>
+                                        <a href="" class="trigger-pop"><img src="assets/image/main1/5.png" alt=""></a>
+                                        <a href=""><img src="assets/image/main1/6.png" alt=""></a>
+                                        <a href=""><img  src="assets/image/main1/7.png" alt=""></a>
+                                        <a href="" class="box3-btn"><img src="assets/image/main1/8.png" alt=""></a>
+                                        <a href="#" class="box2-btn"><img src="assets/image/main1/9.png" alt=""></a>
+                                        <a href=""><img src="assets/image/main1/10.png" alt=""></a>
+                                        <a href=""><img src="assets/image/main1/11.png" alt=""></a>
+                                    </div>
+
+                                    <!-- 기록 -->
+                                    <div id="sub-tabs-panel-2" role="tabpanel" aria-labelledby="sub-tabs-tab-2" tabindex="0" hidden>
+                                        <div class="history-container">
+                                            <div class="box"><img src="assets/image/sub/history1.png" alt=""></div>
+                                            <div class="box"><img src="assets/image/sub/history2.png" alt=""></div>
+                                            <div class="box"><img src="assets/image/sub/history3.png" alt=""></div>
+                                            <div class="box"><img src="assets/image/sub/history4.png" alt=""></div>
+                                            <div class="box"><img src="assets/image/sub/history5.png" alt=""></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- 앨범 -->
+                                    <div id="sub-tabs-panel-3" class="neighbor-house" role="tabpanel" aria-labelledby="sub-tabs-tab-3" tabindex="0" hidden>
+                                        <div class="album-container">
+                                            <img src="assets/image/sub/album.png" alt="">
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- 활동 -->
+                                    <div id="sub-tabs-panel-4" role="tabpanel" aria-labelledby="sub-tabs-tab-4" tabindex="0" hidden>
+                                        <h4>서브 패널 d</h4>
+                                        <p>중첩된 탭의 두 번째 내용입니다.</p>
+                                    </div>
+
+                                    <!-- 내 유형 -->
+                                    <div id="sub-tabs-panel-5" role="tabpanel" aria-labelledby="sub-tabs-tab-5" tabindex="0" hidden>
+                                        <h4>서브 패널 F</h4>
+                                        <p>중첩된 탭의 두 번째 내용입니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // 서브 탭 -->
+                            
+                        </div>
+                        <!--  // 우리집 -->
+
+                        <!-- 옆집 -->
+                        <div id="main-tabs-panel-2" role="tabpanel" aria-labelledby="main-tabs-tab-2" tabindex="0" hidden>
+                            <div class="neighbor-house-container">
+                                <div class="tab"><img src="assets/image/main2/tab.png" alt=""></div>
+                                    <div class="visual">
+                                        <img src="assets/image/main2/main1.png" alt="">
+                                        <img src="assets/image/main2/main2.png" alt="">
+                                    </div>
+                                    <div class="banner">
+                                        <img src="assets/image/main2/banner.png" alt="">
+                                    </div>
+                                    <div class="highlight">
+                                        <h2>옆집 명장면</h2>
+                                        <div class="inner">
+                                            <img src="assets/image/main2/video1.png" alt="">
+                                            <img src="assets/image/main2/video-btn.png" alt="">
+                                            <img src="assets/image/main2/highlight.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="hot">
+                                        <h2>시선집중 인기글</h2>
+                                        <div class="inner">
+                                            <img src="assets/image/main2/hot1.png" alt="">
+                                            <img src="assets/image/main2/hot2.png" alt="">
+                                            <img src="assets/image/main2/hot3.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="more">
+                                        <img src="assets/image/main2/more.png" alt="">
+                                    </div>
+                            </div>
+                        </div>
+                        <!-- // 옆집 -->
+                    </div>
+                </div>
+            </div>
+
             <div class="open-pop">
                 <button type="button"><img src="assets/image/main1/13.png" alt=""></button>
             </div>
@@ -96,9 +216,6 @@
                 </button>
             </div>
         </main>
-        <footer>
-            <p class="gnb-m"><img src="assets/image/main1/12.png" alt=""></p>
-        </footer>
     </div>
     <script src="assets/js/main.js"></script>
 </body>
@@ -109,9 +226,9 @@ const headerbanner = () => {
     const banner = document.querySelector(".h-bnr");
 
     window.addEventListener("scroll", function () {
-    if (window.scrollY > 0 && banner && !banner.classList.contains("hidden")) {
-        banner.classList.add("hidden");
-    }
+        if (window.scrollY > 0 && banner && !banner.classList.contains("hidden")) {
+            banner.classList.add("hidden");
+        }
     });
 }
 
@@ -146,13 +263,11 @@ const popClose = () => {
 
     btn.addEventListener('click', () => {
         btn.classList.add('hide');
+        mainBox.style.paddingTop = 0;
+
         setTimeout(() => {
             btn.style.display = 'none';
-            const offset = 30;
-            const target = mainBox.getBoundingClientRect().top + window.scrollY - offset;
-
-            scrollToSlow(target, 30);
-        }, 300);
+        }, 500);
     });
 };
 
@@ -163,31 +278,36 @@ const scrollToCloseBtn = () => {
     if (!downBtn || !closeBtn) return;
 
     downBtn.addEventListener('click', () => {
-        const offset = 30;
+        const offset = 20;
         const target = closeBtn.getBoundingClientRect().top + window.scrollY - offset;
-        scrollToSlow(target, 30);
+
+        scrollToSlow(target, 600);
     });
 };
 
-function scrollToSlow(targetY, speed = 20) {
+function scrollToSlow(targetY, duration = 400) {
     const currentY = window.scrollY;
     const distance = targetY - currentY;
-    let step = distance / speed;
+    let start = null;
 
-    function scroll() {
-        const newY = window.scrollY + step;
+    window.requestAnimationFrame(step);
 
-        if ((step > 0 && newY >= targetY) || (step < 0 && newY <= targetY)) {
-            window.scrollTo(0, targetY);
-            return;
-        }
+    function step(timestamp) {
+        if (!start) start = timestamp;
 
-        window.scrollTo(0, newY);
-        requestAnimationFrame(scroll);
+        const progress = timestamp - start;
+        window.scrollTo(0, easeInOutCubic(progress, currentY, distance, duration));
+        if (progress < duration) window.requestAnimationFrame(step);
     }
-
-    requestAnimationFrame(scroll);
 }
+
+const easeInOutCubic = (t, b, c, d) => {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t * t + b;
+
+    t -= 2;
+    return c / 2 * (t * t * t + 2) + b;
+} 
 
 const openPopOnScroll = () => {
     const trigger = document.querySelector('.trigger-pop');
@@ -336,6 +456,110 @@ const openPopBox3 = () => {
     });
 }
 
+// 탭
+class Tab {
+    constructor(container) {
+        this.container = container;
+        this.tablist = container.querySelector(':scope > [role="tablist"]');
+
+        const panelContainer = container.querySelector(':scope > .tab-panels');
+
+        if (!this.tablist || !panelContainer) return;
+
+        this.tabs = Array.from(this.tablist.querySelectorAll('[role="tab"]'));
+        this.panels = Array.from(panelContainer.querySelectorAll(':scope > [role="tabpanel"]'));
+
+        if (this.tabs.length === 0) return;
+
+        this.init();
+    }
+
+    init() {
+        this.tablist.addEventListener('click', this.handleClick.bind(this));
+        this.tablist.addEventListener('keydown', this.handleKeydown.bind(this));
+    }
+
+    handleClick(e) {
+        const clickedTab = e.target.closest('[role="tab"]');
+        if (clickedTab) {
+            this.activateTab(clickedTab);
+        }
+    }
+
+    handleKeydown(e) {
+        const currentTab = e.target.closest('[role="tab"]');
+
+        if (!currentTab) return;
+
+        let newIndex = this.tabs.indexOf(currentTab);
+        let shouldPreventDefault = true;
+
+        switch (e.key) {
+            case 'ArrowLeft':
+                newIndex = (newIndex - 1 + this.tabs.length) % this.tabs.length;
+                break;
+            case 'ArrowRight':
+                newIndex = (newIndex + 1) % this.tabs.length;
+                break;
+            case 'Home': newIndex = 0; break;
+            case 'End': newIndex = this.tabs.length - 1; break;
+            default: shouldPreventDefault = false; break;
+        }
+
+        if (shouldPreventDefault) {
+            e.preventDefault();
+
+            this.tabs[newIndex].focus();
+            this.activateTab(this.tabs[newIndex]);
+        }
+    }
+
+    activateTab(tabToActivate) {
+        this.tabs.forEach((tab, index) => {
+            tab.setAttribute('aria-selected', 'false');
+            tab.setAttribute('tabindex', '-1');
+        });
+        
+        this.panels.forEach(panel => {
+            panel.setAttribute('hidden', 'true');
+        });
+
+        const panelId = tabToActivate.getAttribute('aria-controls');
+        const panelToActivate = this.container.querySelector(`#${panelId}`);
+        const index = Array.from(tabToActivate.closest('ul').children).indexOf(tabToActivate.parentElement);
+
+        if(!tabToActivate.closest('#sub-tabs')) {
+            if(index === 0) {
+                document.body.classList.remove('bg2');
+            }
+
+            if(index === 1) {
+                document.body.classList.add('bg2');
+            }
+        }
+
+        tabToActivate.setAttribute('aria-selected', 'true');
+        tabToActivate.setAttribute('tabindex', '0');
+        
+        if (panelToActivate) {
+            panelToActivate.removeAttribute('hidden');
+        }
+    }
+
+    openTab(index) {
+        if (index >= 0 && index < this.tabs.length) {
+            const tabToActivate = this.tabs[index];
+
+            console.log('tabToActivate: ', tabToActivate)
+
+            this.activateTab(tabToActivate);
+            tabToActivate.focus();
+        } else {
+            console.warn(`Tab index ${index} is out of bounds.`);
+        }
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     headerbanner();
     scrolleff();
@@ -345,5 +569,10 @@ document.addEventListener("DOMContentLoaded", () => {
     openPopBox1();
     openPopBox2();
     openPopBox3();
+
+      // 탭 인스턴스 생성
+    document.querySelectorAll('.tab-container').forEach(container => {
+        container.tabsInstance = new Tab(container);
+    });
 });
 </script>
