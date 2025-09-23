@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/main2.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <div class="tab"><img src="assets/image/main2/tab.png" alt=""></div>
+            <div class="visual">
+                <img src="assets/image/main2/main1.png" alt="">
+                <img src="assets/image/main2/main2.png" alt="">
+            </div>
+            <div class="banner">
+                <img src="assets/image/main2/banner.png" alt="">
+            </div>
+            <div class="highlight">
+                <h2>옆집 명장면</h2>
+                <div class="inner">
+                    <img src="assets/image/main2/video1.png" alt="">
+                    <img src="assets/image/main2/video-btn.png" alt="">
+                    <img src="assets/image/main2/highlight.png" alt="">
+                </div>
+            </div>
+            <div class="hot">
+                <h2>시선집중 인기글</h2>
+                <div class="inner">
+                    <img src="assets/image/main2/hot1.png" alt="">
+                    <img src="assets/image/main2/hot2.png" alt="">
+                    <img src="assets/image/main2/hot3.png" alt="">
+                </div>
+            </div>
+            <div class="more">
+                <img src="assets/image/main2/more.png" alt="">
+            </div>
+        </div>
+        <div class="gnb">
+            <img src="assets/image/main2/gnb.png" alt="">
+        </div>
+    </div>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const revealEls = document.querySelectorAll(".highlight h2, .highlight .inner img, .hot h2, .hot .inner img, .banner img, .visual img");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const children = entry.target.querySelectorAll("img, h2");
+                if (children.length) {
+                    children.forEach((child, i) => {
+                        child.style.transitionDelay = `${i * 0.15}s`;
+                        child.classList.add("on");
+                    });
+                } else {
+                    entry.target.classList.add("on");
+                }
+            } else {
+                const children = entry.target.querySelectorAll("img, h2");
+                if (children.length) {
+                    children.forEach(child => {
+                        child.style.transitionDelay = "0s";
+                        child.classList.remove("on");
+                    });
+                } else {
+                    entry.target.classList.remove("on");
+                }
+            }
+        });
+    }, { threshold: 0.2 });
+
+    revealEls.forEach(el => {
+        el.classList.add("reveal");
+        observer.observe(el);
+    });
+});
+</script>
+
+
+</body>
+</html>
