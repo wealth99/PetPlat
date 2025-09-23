@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/insurance.css">
+</head>
+<body>
+    <div class="wrap">
+        <div class="inner">
+            <div class="visual">
+                <h2>랑이 병원 걱정, <br><span style="color:#56A3F6">펫블리</span>에게 맡겨주세요</h2>
+                <img src="assets/image/insurance/visual.png" alt="" class="bg">
+                <ul class="cont-box">
+                    <li><img src="assets/image/insurance/visual-box1.png" alt=""></li>
+                    <li><img src="assets/image/insurance/visual-box2.png" alt=""></li>
+                    <li><img src="assets/image/insurance/visual-box3.png" alt=""></li>
+                    <li><img src="assets/image/insurance/visual-box4.png" alt=""></li>
+                    <li><img src="assets/image/insurance/visual-box1.png" alt=""></li>
+                    <li><img src="assets/image/insurance/visual-box2.png" alt=""></li>
+                    <li><img src="assets/image/insurance/visual-box3.png" alt=""></li>
+                    <li><img src="assets/image/insurance/visual-box4.png" alt=""></li>
+                </ul>
+            </div>
+            <div class="container">
+                <div class="cont-box">
+                    <div class="cont1">
+                        <img src="assets/image/insurance/cont1.png" alt="">
+                    </div>
+                    <div class="cont2">
+                        <img src="assets/image/insurance/cont2.png" alt="">
+                    </div>
+                </div>
+                <div class="list-box">
+                    <h2>펫블리 보험, <br>무엇이 좋을까요?</h2>
+                    <div class="box"><img src="assets/image/insurance/box1.png" alt=""></div>
+                    <div class="box"><img src="assets/image/insurance/box2.png" alt=""></div>
+                    <div class="box"><img src="assets/image/insurance/box3.png" alt=""></div>
+                </div>
+                <div class="review-box">
+                    <h2>펫블리를 경험해본<br>보호자님들의 안심 후기</h2>
+                    <div class="box-wrap">
+                        <div class="box"><img src="assets/image/insurance/reiveiw.png" alt=""></div>
+                        <div class="box"><img src="assets/image/insurance/reiveiw.png" alt=""></div>
+                        <div class="box"><img src="assets/image/insurance/reiveiw.png" alt=""></div>
+                    </div>
+                </div>
+                <div class="qna-box">
+                    <h2>펫블리보험,<br>속 시원히 알려드릴게요</h2>
+                    <div class="box"><img src="assets/image/insurance/qna1.png" alt=""></div>
+                    <div class="box"><img src="assets/image/insurance/qna2.png" alt=""></div>
+                    <div class="box"><img src="assets/image/insurance/qna3.png" alt=""></div>
+                    <div class="box"><img src="assets/image/insurance/qna4.png" alt=""></div>
+                </div>
+            </div>
+        </div>
+        <div class="gnb">
+            <img src="assets/image/insurance/gnb.png" alt="">
+        </div>
+    </div>
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const revealEls = document.querySelectorAll(
+        ".container .cont-box img, \
+        .list-box h2, .list-box .box, \
+        .review-box h2, .review-box .box img, \
+        .qna-box h2, .qna-box .box"
+    );
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const children = entry.target.querySelectorAll(" h2, .box");
+            if (children.length) {
+            children.forEach((child, i) => {
+                child.style.transitionDelay = `${i * 0.15}s`;
+                child.classList.add("on");
+            });
+            } else {
+            entry.target.classList.add("on");
+            }
+        } else {
+            const children = entry.target.querySelectorAll(" h2, .box");
+            if (children.length) {
+            children.forEach(child => {
+                child.style.transitionDelay = "0s";
+                child.classList.remove("on");
+            });
+            } else {
+            entry.target.classList.remove("on");
+            }
+        }
+        });
+    }, { threshold: 0.2 });
+
+    revealEls.forEach(el => {
+        el.classList.add("reveal");
+        observer.observe(el);
+    });
+    });
+    </script>
+
+</body>
+</html>

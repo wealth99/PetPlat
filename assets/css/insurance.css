@@ -1,0 +1,31 @@
+html,body,* {box-sizing: border-box;}
+.wrap {position:relative;}
+.inner {max-width: 390px;width:100%;margin:0 auto;overflow: hidden;padding-bottom: 70px;}
+img {display: block;width:100%;object-fit: contain;cursor: pointer;}
+h2 {font-size: 26px;margin-bottom: 18px;color:#fff;line-height: 140%;font-weight: 600;}
+.reveal {opacity: 0;transform: translateY(40px);transition: all 0.8s ease-out;}
+.reveal.on {opacity: 1; transform: translateY(0);}
+
+.visual {padding-top:60px;position:relative;background-color:#cad5fe;min-height: 80vh;display: flex;flex-direction: column;}
+.visual:before {position: absolute;content: '';background: url(../image/insurance/visual.png);width:100%;display: block;}
+.visual h2 {color:#000;text-align: center;}
+.visual .bg {position: absolute;left: 50%;width: 440px;height: 500px;transform: translateX(-50%);}
+.visual .cont-box {display: flex;margin-top: auto;margin-bottom: 60px;z-index: 1;width:fit-content;gap: 12px;animation: slide 18s linear infinite;}
+.visual .cont-box li {flex: 0 0 auto; width: 92px; height: 163px;}
+@keyframes slide {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+.container {background: #461571;
+background: linear-gradient(18deg, rgba(70, 21, 113, 1) 0%, rgba(21, 8, 62, 1) 100%);padding:50px 18px;}
+.container .cont-box {display: flex;flex-direction: column;gap: 12px;}
+.list-box {margin-top: 60px;}
+.list-box .box {margin-top: 18px;}
+.list-box .box + .box {margin-top: 10px;}
+.review-box {margin-top: 60px;}
+.review-box .box-wrap {display: flex;justify-content: center;width: fit-content;gap: 8px;position: relative;width: 200%;left: -50%;}
+.review-box .box {width: 80%;}
+.qna-box {margin-top: 60px;}
+.qna-box .box + .box {margin-top: 10px;}
+.gnb {position:fixed;bottom:0;max-width: 390px;width:100%;left:50%;transform: translateX(-50%);}
