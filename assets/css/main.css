@@ -146,10 +146,12 @@ main a {
     color: red
 }
 
+/* 엘밤 */
 .album-container {
     margin-top: 44px;
 }
 
+/* 기록 */
 .history-container {
     display: flex;
     flex-direction: column;
