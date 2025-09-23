@@ -38,6 +38,8 @@ background: linear-gradient(18deg, rgba(70, 21, 113, 1) 0%, rgba(21, 8, 62, 1) 1
 .step-4 .heading-txt {text-align: left; color:#fff;padding:20px 18px;}
 .step-4 .heading-txt h2 {font-size: 26px;font-weight: bold;line-height: 140%;}
 .step-4 .heading-txt p {margin-top:12px;font-size: 18px;font-weight: 500;opacity: .7;}
+.step-4 .main-cont {text-align: center;margin-top: 30px;}
+.step-4 .main-cont img {max-width: 400px;}
 .step-4 .bottom {margin-top: auto;}
 .step-4 .bottom .progress img {width:100%;}
 .step-4 .bottom .btn-wrap {margin-top:20px;}
@@ -56,6 +58,7 @@ background: linear-gradient(18deg, rgba(70, 21, 113, 1) 0%, rgba(21, 8, 62, 1) 1
 background: linear-gradient(18deg, rgba(70, 21, 113, 1) 0%, rgba(21, 8, 62, 1) 100%);width:100%;min-height: 100vh;padding:48px 18px 20px 18px;}
 .step-5 .result2 img {display: block;}
 .step-5 .result2 img:last-child {margin-top: 70px;}
-
+.step-5 .close-area {display: flex;width: 100%;height: 24px;justify-content: flex-end;padding:0 18px;margin:20px 0 10px;}
+.step-5 .close-area img {width: auto;height: 100%;cursor: pointer;}
 .step {display: none;}
 .step.on {display: flex;flex-direction: column;}
