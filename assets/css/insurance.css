@@ -18,7 +18,7 @@ h2 {font-size: 26px;margin-bottom: 18px;color:#fff;line-height: 140%;font-weight
 }
 
 .container {background: #461571;
-background: linear-gradient(18deg, rgba(70, 21, 113, 1) 0%, rgba(21, 8, 62, 1) 100%);padding:50px 18px;padding-bottom: 120px;}
+background: linear-gradient(188deg, rgba(70, 21, 113, 1) 0%, rgba(21, 8, 62, 1) 100%);padding:50px 18px;padding-bottom: 120px;}
 .container .cont-box {display: flex;flex-direction: column;gap: 12px;}
 .list-box {margin-top: 60px;}
 .list-box .box {margin-top: 18px;}
