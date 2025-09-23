@@ -1,6 +1,6 @@
 html,body,* {box-sizing: border-box;}
 .step {background: #461571;
-background: linear-gradient(18deg, rgba(70, 21, 113, 1) 0%, rgba(21, 8, 62, 1) 100%);width:100%;min-height: 100vh; max-width: 390px; width: 100%; margin:0 auto; display: none;overflow: hidden;}
+background: linear-gradient(18deg, rgba(70, 21, 113, 1) 0%, rgba(21, 8, 62, 1) 100%);width:100%;min-height: 100vh; max-width: 720px; width: 100%; margin:0 auto; display: none;overflow: hidden;}
 .step img {width: 100%;object-fit: contain;}
 .nextBtn {cursor: pointer;}
 
