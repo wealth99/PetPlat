@@ -1,17 +1,16 @@
 html,body,* {box-sizing: border-box;}
 .wrap {position:relative;}
-.inner {max-width: 720px;width:100%;margin:0 auto;overflow: hidden;}
+.inner {max-width: 720px;width:100%;margin:0 auto;overflow: hidden;background:#cad5fe}
 img {display: block;width:100%;object-fit: contain;cursor: pointer;}
 h2 {font-size: 26px;margin-bottom: 18px;color:#fff;line-height: 140%;font-weight: 600;}
 .reveal {opacity: 0;transform: translateY(40px);transition: all 0.8s ease-out;}
 .reveal.on {opacity: 1; transform: translateY(0);}
 
-.visual {padding-top:60px;position:relative;background-color:#cad5fe;min-height: 80vh;display: flex;flex-direction: column;}
-.visual:before {position: absolute;content: '';background: url(../image/insurance/visual.png);width:100%;display: block;}
+.visual  {position:relative;background:url(../image/insurance/visual1.png);min-height: 86vh;display: flex;flex-direction: column;max-width: 390px;margin: auto;background-position: top 150% center;background-size: cover;background-repeat: no-repeat;overflow: hidden;}
 .visual h2 {color:#000;text-align: center;}
-.visual .bg {position: absolute;left: 50%;width: 440px;height: 500px;transform: translateX(-50%);}
-.visual .cont-box {display: flex;margin-top: auto;margin-bottom: 60px;z-index: 1;width:fit-content;gap: 12px;animation: slide 18s linear infinite;}
-.visual .cont-box li {flex: 0 0 auto; width: 92px; height: 163px;}
+.visual .bg {position: absolute;width: 100%;max-width: 421px;left:50%;transform: translateX(-50%);}
+.visual .cont-box {position:relative;display: flex;margin-top: auto;margin-bottom: 60px;z-index: 1;width:fit-content;gap: 12px;animation: slide 18s linear infinite;}
+.visual .cont-box li {flex: 0 0 auto; width: 92px; height: 140px;}
 @keyframes slide {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
