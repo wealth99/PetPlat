@@ -77,20 +77,15 @@
                 ".qna-box h2, .qna-box .box"
             );
 
+            // 모든 대상 요소에 애니메이션 준비를 위한 'reveal' 클래스를 추가합니다.
             revealEls.forEach(el => {
                 el.classList.add("reveal");
             });
 
-            window.addEventListener("scroll", () => {
-                checkElemVisibility(revealEls)
-            });
-            window.addEventListener("resize", () => {
-                checkElemVisibility(revealEls)
-            });
+            checkElemVisibility();
 
-            document.addEventListener("DOMContentLoaded", () => {
-                checkElemVisibility(revealEls)
-            });
+            window.addEventListener("scroll", checkElemVisibility);
+            window.addEventListener("resize", checkElemVisibility);
         });
     </script>
 

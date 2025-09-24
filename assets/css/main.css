@@ -14,6 +14,17 @@ img {
     vertical-align: top;
 }
 
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.on {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 .h-bnr{
     position: fixed;
     right: 18px;
