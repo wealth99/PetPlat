@@ -86,7 +86,7 @@
                                         <a href="" class="box3-btn reveal"><img src="assets/image/main1/8.png" alt=""></a>
                                         <a href="" class="box2-btn reveal"><img src="assets/image/main1/9.png" alt=""></a>
                                         <a href="" class="reveal" ><img src="assets/image/main1/10.png" alt=""></a>
-                                        <a href="" class="reveal"><img src="assets/image/main1/11.png" alt=""></a>
+                                        <a href="" class="album-btn reveal"><img src="assets/image/main1/11.png" alt=""></a>
                                     </div>
 
                                     <!-- 기록 -->
@@ -505,13 +505,27 @@
 
         const openPop = document.querySelector('.open-pop');
         const checkWrap = document.querySelector('.check-pop');
-
-        checkWrap.addEventListener('click', (e) => {
-            e.preventDefault();
+        checkWrap.addEventListener('click', event => {
+            event.preventDefault();
             
             openPop.style.display = 'flex';
             openPop.classList.add('fade-in');
         });
+
+        const albumBtn = document.querySelector('.album-btn');
+        albumBtn.addEventListener('click', event => {
+            event.preventDefault();
+
+            const target = document.querySelector('#main-tabs').getBoundingClientRect().top + window.scrollY - 20;
+
+            scrollToSlow(target, 600);
+
+            setTimeout(() => {
+                document.querySelector("#sub-tabs").tabsInstance.openTab(2);
+                window.dispatchEvent(new Event('scroll'));
+            }, 600)
+        });
+
 
         checkElemVisibility();
 
