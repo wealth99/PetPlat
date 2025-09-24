@@ -48,3 +48,130 @@ function checkElemVisibility() {
         }
     });
 }
+
+// name - 쿠키 이름, value - 쿠키 값, expires - 만료 시각 (Date 객체)
+function setCookie(name, value, expires) {
+    let cookieString = `${encodeURIComponent(name)}=${encodeURIComponent(value)}`;
+    if (expires) {
+        cookieString += `; expires=${expires.toUTCString()}`;
+    }
+    cookieString += '; path=/'; // 사이트 전체에서 유효하도록 설정
+    document.cookie = cookieString;
+}
+
+function getCookie(name) {
+    const cookies = document.cookie.split(';').map(cookie => cookie.trim());
+    for (const cookie of cookies) {
+        const [cookieName, cookieValue] = cookie.split('=');
+        if (decodeURIComponent(cookieName) === name) {
+            return decodeURIComponent(cookieValue);
+        }
+    }
+    return null;
+}
+
+ // 탭
+class Tab {
+    constructor(container) {
+        this.container = container;
+        this.tablist = container.querySelector(':scope > [role="tablist"]');
+
+        const panelContainer = container.querySelector(':scope > .tab-panels');
+
+        if (!this.tablist || !panelContainer) return;
+
+        this.tabs = Array.from(this.tablist.querySelectorAll('[role="tab"]'));
+        this.panels = Array.from(panelContainer.querySelectorAll(':scope > [role="tabpanel"]'));
+
+        if (this.tabs.length === 0) return;
+
+        this.init();
+    }
+
+    init() {
+        this.tablist.addEventListener('click', this.handleClick.bind(this));
+        this.tablist.addEventListener('keydown', this.handleKeydown.bind(this));
+    }
+
+    handleClick(e) {
+        const clickedTab = e.target.closest('[role="tab"]');
+        if (clickedTab) {
+            this.activateTab(clickedTab);
+        }
+
+        checkElemVisibility();
+    }
+
+    handleKeydown(e) {
+        const currentTab = e.target.closest('[role="tab"]');
+
+        if (!currentTab) return;
+
+        let newIndex = this.tabs.indexOf(currentTab);
+        let shouldPreventDefault = true;
+
+        switch (e.key) {
+            case 'ArrowLeft':
+                newIndex = (newIndex - 1 + this.tabs.length) % this.tabs.length;
+                break;
+            case 'ArrowRight':
+                newIndex = (newIndex + 1) % this.tabs.length;
+                break;
+            case 'Home': newIndex = 0; break;
+            case 'End': newIndex = this.tabs.length - 1; break;
+            default: shouldPreventDefault = false; break;
+        }
+
+        if (shouldPreventDefault) {
+            e.preventDefault();
+
+            this.tabs[newIndex].focus();
+            this.activateTab(this.tabs[newIndex]);
+        }
+    }
+
+    activateTab(tabToActivate) {
+        this.tabs.forEach((tab, index) => {
+            tab.setAttribute('aria-selected', 'false');
+            tab.setAttribute('tabindex', '-1');
+        });
+        
+        this.panels.forEach(panel => {
+            panel.setAttribute('hidden', 'true');
+        });
+
+        const panelId = tabToActivate.getAttribute('aria-controls');
+        const panelToActivate = this.container.querySelector(`#${panelId}`);
+        const index = Array.from(tabToActivate.closest('ul').children).indexOf(tabToActivate.parentElement);
+
+        if(!tabToActivate.closest('#sub-tabs')) {
+            if(index === 0) {
+                document.body.classList.remove('bg2');
+            }
+
+            if(index === 1) {
+                document.body.classList.add('bg2');
+            }
+        }
+
+        tabToActivate.setAttribute('aria-selected', 'true');
+        tabToActivate.setAttribute('tabindex', '0');
+        
+        if (panelToActivate) {
+            panelToActivate.removeAttribute('hidden');
+        }
+    }
+
+    openTab(index) {
+        if (index >= 0 && index < this.tabs.length) {
+            const tabToActivate = this.tabs[index];
+
+            console.log('tabToActivate: ', tabToActivate)
+
+            this.activateTab(tabToActivate);
+            tabToActivate.focus();
+        } else {
+            console.warn(`Tab index ${index} is out of bounds.`);
+        }
+    }
+}
