@@ -17,11 +17,11 @@
             <div class="info">
                 <img src="assets/image/main1/1.png" alt="" class="scroll-eff">
                 <button type="button" class="down-btn scroll-eff"><img src="assets/image/main1/1-1.png" alt=""></button>
-                <p class="h-bnr"><img src="assets/image/main1/5.png" alt=""></p>
             </div>
 
             <div class="main-box">
                 <button type="button" class="close-btn"><img src="assets/image/main1/2.png" alt=""></button>
+                <p class="h-bnr"><img src="assets/image/main1/5.png" alt=""></p>
 
                 <div class="tab-container" id="main-tabs">
                     <ul role="tablist" class="full">
@@ -224,10 +224,12 @@
 <script>
 const headerbanner = () => {
     const banner = document.querySelector(".h-bnr");
+    const banner2 = document.querySelector(".close-btn");
 
     window.addEventListener("scroll", function () {
         if (window.scrollY > 0 && banner && !banner.classList.contains("hidden")) {
             banner.classList.add("hidden");
+            banner2.classList.add("on");
         }
     });
 }

@@ -16,15 +16,14 @@ img {
 
 .h-bnr{
     position: absolute;
-    bottom: 14px;
-    left: 18px;
-    width: calc(100% - 36px);
+    top: 0;
+    left: 0;
+    width: 100%;
     transition: opacity 0.5s ease;
-    display: none;
 }
 
 .h-bnr.hidden {
-    opacity: 0;
+    opacity: 0 !important;
     pointer-events: none;
 }
 
@@ -39,7 +38,7 @@ img {
     width: 100%;
     max-width: 780px;
     transform: translateX(-50%);
-    z-index: 1000;
+    z-index: 1;
 }
 
 main {
@@ -73,6 +72,11 @@ main a {
     left: 0;
     width: 100%;
     transition: all 0.5s ease;
+    opacity: 0.2;
+}
+
+.close-btn.on{
+    opacity: 1;
 }
 
 .close-btn.hide {
@@ -189,7 +193,6 @@ main a {
     height: 42px;
     margin: 33px auto 0;
 }
-
 
 .open-pop{
     position: fixed;
@@ -498,7 +501,8 @@ main a {
 }
 
 .box3 button:not(.box3-step1, .box3-step2) img{
-    /* width: 78%; */
+    width: calc(100% - 36px);
+    margin-top: 30px;
 }
 
 .box3-step1, .box3-step2{
@@ -520,5 +524,9 @@ main a {
 }
 
 .box3.on button:not(.box3-step1, .box3-step2).on{
-    display: block;
+    display: flex;
+}
+.box3-step2{
+    overflow-y: auto;
+    justify-content: flex-start;
 }
