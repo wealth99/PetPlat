@@ -1,30 +1,157 @@
-html,body,* {box-sizing: border-box;}
-.wrap {position:relative;}
-.inner {max-width: 720px;width:100%;margin:0 auto;overflow: hidden;background:#cad5fe}
-img {display: block;width:100%;object-fit: contain;cursor: pointer;}
-h2 {font-size: 26px;margin-bottom: 18px;color:#fff;line-height: 140%;font-weight: 600;}
-.reveal {opacity: 0;transform: translateY(40px);transition: all 0.8s ease-out;}
-.reveal.on {opacity: 1; transform: translateY(0);}
-
-.visual  {position:relative;background:url(../image/insurance/visual1.png);min-height: 86vh;display: flex;flex-direction: column;max-width: 390px;margin: auto;background-position: top 150% center;background-size: cover;background-repeat: no-repeat;overflow: hidden;}
-.visual h2 {color:#000;text-align: center;}
-.visual .bg {position: absolute;width: 100%;max-width: 421px;left:50%;transform: translateX(-50%);}
-.visual .cont-box {position:relative;display: flex;margin-top: auto;margin-bottom: 60px;z-index: 1;width:fit-content;gap: 12px;animation: slide 18s linear infinite;}
-.visual .cont-box li {flex: 0 0 auto; width: 92px; height: 140px;}
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+body {
+    background: #c9d5fe;
 }
 
-.container {background: #461571;
-background: linear-gradient(188deg, rgba(70, 21, 113, 1) 0%, rgba(21, 8, 62, 1) 100%);padding:50px 18px;padding-bottom: 120px;}
-.container .cont-box {display: flex;flex-direction: column;gap: 12px;}
-.list-box {margin-top: 60px;}
-.list-box .box {margin-top: 18px;}
-.list-box .box + .box {margin-top: 10px;}
-.review-box {margin-top: 60px;}
-.review-box .box-wrap {display: flex;justify-content: center;width: fit-content;gap: 8px;position: relative;width: 200%;left: -50%;}
-.review-box .box {width: 80%;}
-.qna-box {margin-top: 60px;}
-.qna-box .box + .box {margin-top: 10px;}
-.gnb {position:fixed;bottom:0;max-width: 720px;width:100%;left:50%;transform: translateX(-50%);}
+.wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.inner {
+    max-width: 720px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #cad5fe
+}
+
+img {
+    display: block;
+    width: 100%;
+    cursor: pointer;
+}
+
+h2 {
+    font-size: 26px;
+    margin-bottom: 18px;
+    color: #fff;
+    line-height: 140%;
+    font-weight: 600;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.on {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.gnb-m {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 780px;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+main {
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 28px 0 70px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.visual {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.visual .cont-box {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.visual .cont-box p {
+    margin-bottom: 18px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.visual .cont-box ul {
+    position: relative;
+    display: flex;
+    z-index: 1;
+    gap: 12px;
+    animation: slide 18s linear infinite;
+}
+
+.visual .cont-box li {
+    flex: 0 0 auto;
+    width: 24%;
+    /* width: 92px; */
+    /* height: 140px; */
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.container {
+    background: #461571;
+    background: linear-gradient(188deg, rgba(70, 21, 113, 1) 0%, rgba(21, 8, 62, 1) 100%);
+    padding: 50px 18px;
+    padding-bottom: 120px;
+}
+
+.container .cont-box {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.list-box {
+    margin-top: 60px;
+}
+
+.list-box .box {
+    margin-top: 18px;
+}
+
+.list-box .box+.box {
+    margin-top: 10px;
+}
+
+.review-box {
+    margin-top: 60px;
+}
+
+.review-box .box-wrap {
+    display: flex;
+    justify-content: center;
+    width: fit-content;
+    gap: 8px;
+    position: relative;
+    width: 200%;
+    left: -50%;
+}
+
+.review-box .box {
+    width: 80%;
+}
+
+.qna-box {
+    margin-top: 60px;
+}
+
+.qna-box .box +.box {
+    margin-top: 10px;
+}
