@@ -10,7 +10,9 @@
 <body>
     <div id="wrap">
         <header class="gnb-m">
-            <img src="assets/image/main1/12.png" alt="">
+            <a href="/">
+                <img src="assets/image/main1/12.png" alt="">
+            </a>
         </header>
 
         <main>
@@ -64,12 +66,12 @@
                                         </button>
                                     </li>
                                     <li role="presentation">
-                                        <button type="button" id="sub-tabs-tab-4" role="tab" aria-selected="false" aria-controls="sub-tabs-panel-4" tabindex="-1">
+                                        <button type="button" id="sub-tabs-tab-4" role="tab" aria-selected="false" aria-controls="sub-tabs-panel-4" tabindex="-1" style="pointer-events: none;">
                                             <img src="assets/image/main1/tab4.png" alt="">
                                         </button>
                                     </li>
                                     <li role="presentation">
-                                        <button type="button" id="sub-tabs-tab-5" role="tab" aria-selected="false" aria-controls="sub-tabs-panel-5" tabindex="-1">
+                                        <button type="button" id="sub-tabs-tab-5" role="tab" aria-selected="false" aria-controls="sub-tabs-panel-5" tabindex="-1" style="pointer-events: none;">
                                              <img src="assets/image/main1/tab5.png" alt="">
                                         </button>
                                     </li>
@@ -332,8 +334,8 @@ const openPopOnScroll = () => {
         }
     };
 
-    window.addEventListener('scroll', checkVisibility);
-    window.addEventListener('load', checkVisibility);
+    // window.addEventListener('scroll', checkVisibility);
+    // window.addEventListener('load', checkVisibility);
 };
 
 const openPopBox1 = () => {

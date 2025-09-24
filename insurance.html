@@ -66,46 +66,32 @@
             </div>
         </main>
     </div>
+
+    <script src="assets/js/main.js"></script>
     <script>
-    document.addEventListener("DOMContentLoaded", () => {
-    const revealEls = document.querySelectorAll(
-        ".container .cont-box img, \
-        .list-box h2, .list-box .box, \
-        .review-box h2, .review-box .box img, \
-        .qna-box h2, .qna-box .box"
-    );
+        document.addEventListener("DOMContentLoaded", () => {
+            const revealEls = document.querySelectorAll(
+                ".container .cont-box img, " +
+                ".list-box h2, .list-box .box, " +
+                ".review-box h2, .review-box .box img, " +
+                ".qna-box h2, .qna-box .box"
+            );
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const children = entry.target.querySelectorAll(" h2, .box");
-            if (children.length) {
-            children.forEach((child, i) => {
-                child.style.transitionDelay = `${i * 0.15}s`;
-                child.classList.add("on");
+            revealEls.forEach(el => {
+                el.classList.add("reveal");
             });
-            } else {
-            entry.target.classList.add("on");
-            }
-        } else {
-            const children = entry.target.querySelectorAll(" h2, .box");
-            if (children.length) {
-            children.forEach(child => {
-                child.style.transitionDelay = "0s";
-                child.classList.remove("on");
+
+            window.addEventListener("scroll", () => {
+                checkElemVisibility(revealEls)
             });
-            } else {
-            entry.target.classList.remove("on");
-            }
-        }
+            window.addEventListener("resize", () => {
+                checkElemVisibility(revealEls)
+            });
+
+            document.addEventListener("DOMContentLoaded", () => {
+                checkElemVisibility(revealEls)
+            });
         });
-    }, { threshold: 0.2 });
-
-    revealEls.forEach(el => {
-        el.classList.add("reveal");
-        observer.observe(el);
-    });
-    });
     </script>
 
 </body>

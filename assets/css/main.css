@@ -17,7 +17,7 @@ img {
 .h-bnr{
     position: fixed;
     right: 18px;
-    bottom: 95px;
+    bottom: 24.5vw;
     left: 18px;
     transition: opacity 0.5s ease;
     background: linear-gradient(0deg, #290E53, #290E53), linear-gradient(90deg, rgba(255, 137, 68, 0.25) 0%, rgba(117, 182, 255, 0.25) 100%);
