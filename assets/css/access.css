@@ -1,0 +1,260 @@
+html,
+body,
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #461571;
+    background: linear-gradient(18deg, rgba(70, 21, 113, 1) 0%, rgba(21, 8, 62, 1) 100%);
+}
+
+img {
+    width: 100%;
+}
+
+.splash {
+    width: 100%;
+    height: 100vh;
+}
+
+.splash  img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.step {
+    width: 100%;
+    min-height: 100vh;
+    max-width: 780px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 60px 18px 20px;
+    display: none;
+    overflow: hidden;
+}
+
+.step.on {
+    display: flex;
+    flex-direction: column;
+}
+
+.step .heading-txt {
+    color: #fff;
+}   
+
+.step .heading-txt h2 {
+    font-size: 26px;
+    font-weight: bold;
+    line-height: 140%;
+}
+
+.step .heading-txt p {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: .7;
+}
+
+.step .main-cont {
+    margin: 50px 0;
+    padding: 0 32px;
+    text-align: center;
+}
+
+.step .bottom {
+    margin-top: auto;
+}
+
+.step .bottom .btn-wrap {
+    margin-top: 20px;
+}
+
+.step .btn-wrap img {
+    height: 87px;
+}
+
+.nextBtn {
+    cursor: pointer;
+}
+
+
+/* step 1 */
+.step-1 {
+    flex-direction: column;
+}
+
+.step-1 .heading-txt {
+    text-align: center;
+}
+
+
+/* step 2 */
+.step-2 {
+    flex-direction: column;
+}
+
+.step-2 .heading-txt {
+    text-align: center;
+    padding: 60px 18px 20px;
+}
+
+.step-2 .layer {
+    position: relative;
+    margin-top: auto;
+    margin-left: -18px;
+    margin-right: -18px;
+}
+
+.step-2 .layer img {
+    transform: translateY(90%);
+    transition: 0.5s ease-in-out;
+}
+
+.step-2 .layer img.on {
+    transform: translateY(0);
+}
+
+
+/* step 3 */
+.step-3 {
+    flex-direction: column;
+}
+
+.step-3 .heading-txt {
+    text-align: center;
+}
+
+
+/* step 4 */
+.step-4 {
+    /* padding: 60px 18px 20px; */
+    flex-direction: column;
+    background: url('/assets/image/access/bg-main-box3.png') 50% 50% / cover no-repeat
+}
+
+.step-4 .heading-txt {
+    text-align: center;
+}
+
+.step-4 .main-cont {
+    text-align: center;
+    padding: 0;
+}
+
+.step-4 .nextBtn {
+    display: none;
+}
+
+
+/* step 5 */
+.step-5 {
+    /* padding: 60px 18px 20px; */
+    /* display: flex; */
+    flex-direction: column;
+}
+
+.step-5 .heading-txt {
+    text-align: center;
+}
+
+.step-5 .main-cont {
+    margin-top: 80px;
+}
+
+/* step 6, 7, 8 */
+.step-6 .heading-txt,
+.step-7 .heading-txt,
+.step-8 .heading-txt {
+    padding: 0 8px;
+}
+
+.step-6 .main-cont,
+.step-7 .main-cont,
+.step-8 .main-cont {
+    padding: 0;
+}
+
+.step-6.active .main-cont img,
+.step-7.active .main-cont img,
+.step-8.active .main-cont img {
+    display: none;
+}
+
+.step-6:not(.active) .img-active,
+.step-7:not(.active) .img-active,
+.step-8:not(.active) .img-active {
+    display: none;
+}
+
+.step-6.active img.img-active,
+.step-7.active img.img-active,
+.step-8.active img.img-active {
+    display: block;
+}
+
+/* step 9 */
+.step-9 {
+    background: #D6DFFE;
+    padding: 0;
+}
+
+.step-9 .result1 {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 18px 0;
+}
+
+.step-9 .result1 img {
+    display: block;
+}
+
+.step-9 .result1 img:nth-child(2) {
+    margin: 20px 0 10px;
+}
+
+.step-9 .result1 img:nth-child(3) {
+    margin-top: 16px;
+}
+
+.step-9 .result1 .bottom {
+    margin-top: auto;
+}
+
+.step-9 .result1 .bottom img:nth-child(1) + a {
+    display: block;
+    margin-top: 58px;
+    margin-left: -18px;
+    margin-right: -18px;
+}
+
+.step-9 .result2 {
+    background: #461571;
+    background: linear-gradient(18deg, rgba(70, 21, 113, 1) 0%, rgba(21, 8, 62, 1) 100%);
+    width: 100%;
+    min-height: 100vh;
+    padding: 48px 18px 120px 18px;
+}
+
+.step-9 .result2 img {
+    display: block;
+}
+
+.step-9 .result2 img:last-child {
+    margin-top: 70px;
+}
+
+.step-9 .close-area {
+    display: flex;
+    width: 100%;
+    height: 24px;
+    justify-content: flex-end;
+    padding: 0 18px;
+    margin: 20px 0 10px;
+}
+
+.step-9 .close-area img {
+    width: auto;
+    height: 100%;
+    cursor: pointer;
+}
