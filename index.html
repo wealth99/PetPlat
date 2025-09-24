@@ -81,7 +81,7 @@
                                     <div id="sub-tabs-panel-1" role="tabpanel" aria-labelledby="sub-tabs-tab-1" tabindex="0">
                                         <a href="" class="reveal"><img src="assets/image/main1/4.png" alt=""></a>
                                         <a href="" class="trigger-pop reveal"><img src="assets/image/main1/5.png" alt=""></a>
-                                        <a href="" class="reveal"><img src="assets/image/main1/6.png" alt=""></a>
+                                        <a href="" class="check-pop reveal"><img src="assets/image/main1/6.png" alt=""></a>
                                         <a href="" class="reveal"><img  src="assets/image/main1/7.png" alt=""></a>
                                         <a href="" class="box3-btn reveal"><img src="assets/image/main1/8.png" alt=""></a>
                                         <a href="" class="box2-btn reveal"><img src="assets/image/main1/9.png" alt=""></a>
@@ -501,6 +501,16 @@
         // 탭 인스턴스 생성
         document.querySelectorAll('.tab-container').forEach(container => {
             container.tabsInstance = new Tab(container);
+        });
+
+        const openPop = document.querySelector('.open-pop');
+        const checkWrap = document.querySelector('.check-pop');
+
+        checkWrap.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            openPop.style.display = 'flex';
+            openPop.classList.add('fade-in');
         });
 
         checkElemVisibility();
