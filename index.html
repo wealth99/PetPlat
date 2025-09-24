@@ -290,7 +290,13 @@
 
         downBtn.addEventListener('click', () => {
             const offset = 20;
-            const target = closeBtn.getBoundingClientRect().top + window.scrollY - offset;
+            let target;
+
+            if(!closeBtn.classList.contains('hide')) {
+                target = closeBtn.getBoundingClientRect().top + window.scrollY - offset;
+            } else {
+                target = document.querySelector('#main-tabs').getBoundingClientRect().top + window.scrollY - offset;
+            }
 
             scrollToSlow(target, 600);
         });
