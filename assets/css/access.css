@@ -106,7 +106,9 @@ img {
 
 
 /* step 2 */
-.step-2 {}
+.step-2 {
+    padding: 60px 18px 0;
+}
 
 .step-2 .heading-txt {
     text-align: center;
