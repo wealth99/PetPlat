@@ -63,6 +63,7 @@ main {
     position: relative;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
 .visual .cont-box {
@@ -95,14 +96,8 @@ main {
     /* height: 140px; */
 }
 
-@keyframes slide {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
+@media screen and (min-width:391px){
+    .visual .cont-box p {font-size:24px;margin-bottom: 30px;}
 }
 
 .container {
@@ -110,6 +105,7 @@ main {
     background: linear-gradient(188deg, rgba(70, 21, 113, 1) 0%, rgba(21, 8, 62, 1) 100%);
     padding: 50px 18px;
     padding-bottom: 120px;
+    overflow: hidden;
 }
 
 .container .cont-box {
@@ -135,17 +131,16 @@ main {
 }
 
 .review-box .box-wrap {
-    display: flex;
-    justify-content: center;
-    width: fit-content;
-    gap: 8px;
     position: relative;
-    width: 200%;
-    left: -50%;
+    display: flex;
+    z-index: 1;
+    gap: 12px;
+    animation: slide 16s linear infinite;
 }
 
 .review-box .box {
-    width: 80%;
+    flex: 0 0 auto;
+    width: 90%;
 }
 
 .qna-box {
@@ -154,4 +149,16 @@ main {
 
 .qna-box .box +.box {
     margin-top: 10px;
+}
+
+
+
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
