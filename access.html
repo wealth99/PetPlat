@@ -175,6 +175,34 @@
 
     <script src="assets/js/main.js"></script>
     <script>
+        window.addEventListener('load', () => {
+            console.log('load')
+            const clickPoints = Array.from(document.querySelectorAll('.click-point[data-order]'))
+                .sort((a, b) => (parseInt(a.dataset.order, 10) || 0) - (parseInt(b.dataset.order, 10) || 0));
+
+            if (clickPoints.length === 0) return;
+
+            let currentIndex = 0;
+            clickPoints[0].classList.add('show');
+
+            clickPoints.forEach((el, idx) => {
+                el.addEventListener('click', () => {
+                    if (!el.classList.contains('show')) return;
+
+                    console.log('click');
+
+                    el.classList.remove('show');
+
+                    currentIndex = idx + 1;
+                    if (currentIndex < clickPoints.length) {
+                        clickPoints[currentIndex].classList.add('show');
+                    } else {
+                        console.log('끝');
+                    }
+                });
+            });
+        });
+
         document.addEventListener('DOMContentLoaded', () => {
 
             const steps = document.querySelectorAll(".step");
@@ -236,31 +264,6 @@
 
             window.addEventListener("scroll", checkElemVisibility);
             window.addEventListener("resize", checkElemVisibility);
-
-            const clickPoints = Array.from(document.querySelectorAll('.click-point[data-order]'))
-                .sort((a, b) => (parseInt(a.dataset.order, 10) || 0) - (parseInt(b.dataset.order, 10) || 0));
-
-            if (clickPoints.length === 0) return;
-
-            let currentIndex = 0;
-            clickPoints[0].classList.add('show');
-
-            clickPoints.forEach((el, idx) => {
-                el.addEventListener('click', () => {
-                if (!el.classList.contains('show')) return;
-
-                console.log('click');
-
-                el.classList.remove('show');
-
-                currentIndex = idx + 1;
-                if (currentIndex < clickPoints.length) {
-                    clickPoints[currentIndex].classList.add('show');
-                } else {
-                    console.log('끝');
-                }
-                });
-            });
         });
     </script>
 </body>
