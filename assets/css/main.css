@@ -415,7 +415,7 @@ main a {
     transform: translateY(0);
 }
 
-.box1-pop4{
+.type1{
     position: fixed;
     left: 100%;
     top:0;
@@ -426,36 +426,87 @@ main a {
     transition: left .3s;
 }
 
-.box1-pop4>img:first-child{
+.type1>img:first-child{
     width: 38%;
 }
 
-.box1-pop4 p{
+.type1 p{
     width: calc(100% - 70px);
     height: 40%;
     margin: 10% auto 10%;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 }
 
-.box1-pop4 p img{
+
+.type1 p .foot{
     width: 30%;
     opacity: 0.5;
     transition: width .4s ease;
 }
-
-.box1-pop4 button{
-    padding:0 24px;
+.type1 p .star{
+    width: 60px;
+    opacity: 0;
+    transition: opacity .3s ease;
 }
 
-.box1-pop4.on{
+.type1 p .star.top{
+    position: absolute;
+    top: -31px;
+    right: 40px;
+}
+
+.type1 p .star.bottom{
+    position: absolute;
+    bottom: 0;
     left: 0;
 }
 
-.box1-pop4.on p img{
+.type1 button{
+    padding:0 24px;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: all .3s;
+}
+
+.type1.on{
+    left: 0;
+}
+
+.type1.on p .foot{
     opacity: 1;
     width: 100%;
+}
+.type1.on p .star{
+    opacity: 1;
+}
+
+.type1.on p .star.top{
+    opacity: 1;
+    transition-delay: .4s;
+    animation: blinkIn 5s ease-in-out 3s infinite;
+}
+
+.type1.on p .star.bottom{
+    opacity: 1;
+    transition-delay: .3s;
+    animation: blinkIn 4s ease-in-out 2s infinite;
+}
+@keyframes blinkIn {
+    0% { opacity: 0; }
+    20% { opacity: 0.5; }
+    40% { opacity: 1; }
+    60% { opacity: 0.5; }
+    80% { opacity: 0.7; }
+    100% { opacity: 0.; }
+}
+
+.type1.on button{
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: .4s;
 }
 
 .box1-pop5{
@@ -466,11 +517,54 @@ main a {
     width: 100%;
     height: 100%;
     padding-top: 40px;
-    display: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.box1-pop5 .bg25-1{
+    width: 50%;
+    display: block;
+    margin: 0 auto;
+}
+
+.box1-pop5 .bg25-2{
+    width: calc(100% - 100px);
+    position: absolute;
+    left: 0;
+}
+
+.box1-pop5 .bg25-3{
+    width: calc(100% - 220px);
+    position: absolute;
+    right: 24px;
+    top: 43%;
+}
+
+.box1-pop5 .bg25-4{
+    width: calc(100% - 193px);
+    position: absolute;
+    top: 50%;
+    left: -11px;
+}
+
+.box1-pop5 .bg25-5{
+    width: calc(100% - 193px);
+    position: absolute;
+    top: 66%;
+    right: 38px;
+}
+.box1-pop5 .sc{
+    transform: scale(0.7);
+    transition: transform .3s;
 }
 
 .box1-pop5.on{
-    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.box1-pop5.on .sc{
+    transform: scale(1);
 }
 
 .box2{
@@ -517,19 +611,19 @@ main a {
 }
 
 .box3 button:not(.box3-step1, .box3-step2){
-    display: none;
+    /* display: none; */
     background: linear-gradient(180deg, #15083E 0%, #461571 100%);
-    display: flex;
+    /* display: flex;
     align-items: flex-start;
-    justify-content: center;
+    justify-content: center; */
     height: 100%;
     width: 100%;
 }
 
-.box3 button:not(.box3-step1, .box3-step2) img{
+/* .box3 button:not(.box3-step1, .box3-step2) img{
     width: calc(100% - 36px);
     margin-top: 30px;
-}
+} */
 
 .box3-step1, .box3-step2{
     display: flex;
@@ -550,7 +644,7 @@ main a {
 }
 
 .box3.on button:not(.box3-step1, .box3-step2).on{
-    display: flex;
+    /* display: flex; */
 }
 .box3-step2{
     overflow-y: auto;
