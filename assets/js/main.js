@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
  */
 function checkElemVisibility() {
     // 애니메이션을 시작할 트리거 지점을 창 높이의 80%로 설정합니다.
-    const triggerPoint = window.innerHeight * 0.9;
+    const triggerPoint = window.innerHeight * 0.99;
     const revealEls = document.querySelectorAll('.reveal');
 
     revealEls.forEach(el => {
