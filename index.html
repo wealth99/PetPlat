@@ -213,7 +213,19 @@
             </div>
 
             <div class="box2">
-                <button type="button" class="click-point" data-order="17"><img src="assets/image/main1/26.png" alt=""></button>
+                <div class="bg">
+                    <img src="assets/image/main1/box2-bg.png" alt="" class="box2-bg">
+                </div>
+                <div class="img-group click-point" data-order="17">
+                    <img src="assets/image/main1/box2-arrow.png" alt="" class="box2-arrow">
+                    <img src="assets/image/main1/box2-1.png" alt="" class="box2-1 reveal">
+                    <img src="assets/image/main1/box2-2.png" alt="" class="box2-2 reveal">
+                    <img src="assets/image/main1/box2-3.png" alt="" class="box2-3 reveal">
+                    <img src="assets/image/main1/box2-4.png" alt="" class="box2-4 reveal">
+                    <img src="assets/image/main1/box2-5.png" alt="" class="box2-5 reveal">
+                    <img src="assets/image/main1/box2-6.png" alt="" class="box2-6 reveal">
+                    <img src="assets/image/main1/box2-7.png" alt="" class="box2-7 reveal">
+                </div>
             </div>
 
             <div class="box3">
@@ -469,13 +481,18 @@
     const openPopBox2 = () => {
         const box2 = document.querySelector('.box2');
         const box2Openbtn = document.querySelector('.box2-btn');
-        const box2Closebtn = box2.querySelector('button');
+        const box2Closebtn = box2.querySelector('.img-group');
 
         box2Openbtn.addEventListener('click', e => {
             e.preventDefault();
             e.stopPropagation();
             box2.classList.add('on');
+
+            window.dispatchEvent(new Event('scroll'));
         });
+
+        box2Closebtn.addEventListener('scroll', checkElemVisibility);
+        box2Closebtn.addEventListener("resize", checkElemVisibility);
 
         box2Closebtn.addEventListener('click', () => {
             box2.classList.remove('on');
