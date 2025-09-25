@@ -632,42 +632,31 @@ main a {
     visibility: visible;
 }
 
-/* .box3 button:not(.box3-step1, .box3-step2){
-    display: none;
-    background: linear-gradient(180deg, #15083E 0%, #461571 100%);
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    padding-bottom: 30px;
-    overflow-y: auto;
-} */
-
-/* .box3 button:not(.box3-step1, .box3-step2) img{
-    width: calc(100% - 36px);
-    margin-top: 30px;
-} */
-
 .box3-step1, .box3-step2{
     display: flex;
-    display: none;
     flex-direction: column;
     height: 100%;
     justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -1;
+}
+.box3-step1.on, .box3-step2.on{
+    z-index: 1;
 }
 
-.box3-step1.on, .box3-step2.on {
-    display: flex;
-}
-
-.box3-step1 img, .box3-step2 img{
+.box3-step1 p, .box3-step2 p{
     max-width: 100%;
     transform: translateY(100%);
     transition: transform .3s;
 }
+.box3-step1 img:first-child, .box3-step2 img:first-child{
+    margin-bottom: -1px;
+}
 
-.box3-step1.on img, .box3-step2.on img{
+.box3-step1.on p, .box3-step2.on p{
     max-width: 100%;
     transform: translateY(0);
 }

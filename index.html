@@ -217,8 +217,18 @@
             </div>
 
             <div class="box3">
-                <button type="button" class="box3-step1"><img src="assets/image/main1/27.png" alt=""></button>
-                <button type="button" class="box3-step2"><img src="assets/image/main1/28.png" alt=""></button>
+                <button type="button" class="box3-step1">
+                    <p>
+                        <img src="assets/image/main1/27-1.png" alt="">
+                        <img src="assets/image/main1/27-2.png" alt="">
+                    </p>
+                </button>
+                <button type="button" class="box3-step2">
+                    <p>
+                        <img src="assets/image/main1/28.png" alt="">
+                        <img src="assets/image/main1/27-2.png" alt="">
+                    </p>
+                </button>
 
                 <div class="box3-step3 type1">
                     <img src="assets/image/main1/22.png" alt="">
@@ -492,30 +502,25 @@
 
         box3Step1.addEventListener('click', () => {
             box3Step1.classList.remove('on');
-            box3Step1.style.display = "none";
             box3Step2.classList.add('on');
         });
 
         box3Step2.addEventListener('click', () => {
-            box3Step2.style.display = "none";
             box3Step2.classList.remove('on');
             box3Step3.classList.add('on');
         });
 
         box3Step3.addEventListener('click', () => {
-            box3Step3.style.display = "none";
             box3Step3.classList.remove('on');
             box3Step4.classList.add('on');
         });
 
         box3Step4.addEventListener('click', () => {
-            box3Step4.style.display = "none";
             box3Step4.classList.remove('on');
             box3Step5.classList.add('on');
         });
 
         box3Step5.addEventListener('click', () => {
-            box3Step5.style.display = "none";
             box3Step5.classList.remove('on');
             box3.classList.remove('on');
         });
