@@ -589,7 +589,7 @@
     });
 </script>
 <script>
-wind.addEventListener('load', () => {
+window.addEventListener('load', () => {
     const clickPoints = Array.from(document.querySelectorAll('.click-point[data-order]'))
         .sort((a, b) => (parseInt(a.dataset.order, 10) || 0) - (parseInt(b.dataset.order, 10) || 0));
 
