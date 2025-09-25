@@ -7,6 +7,44 @@
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/main.css">
 </head>
+<style>
+    .click-point:before {display:none;position:absolute;right: -8%;top: -7%;width: 48px;height: 48px;background: #ff0000;border-radius: 50%;content: '';opacity: .3;animation: circle 1s linear infinite;z-index: 1;}
+    .main-box .click-point:before {top: 2%;right: 2%;}
+    .click-point.show:before {display: block;}
+    [data-order="2"]:before {top: 67%;left: 43%;}
+    [data-order="3"]:before {left: 0;top: 2%;}
+    [data-order="4"]:before {bottom: 13%;top: auto; right: 12%;left: auto;}
+    [data-order="5"]:before {top: 7%;right: 3%;}
+    [data-order="6"]:before {top: 20%;right:20%}
+    [data-order="7"]:before {top: auto;bottom: 3%;left: 50%;}
+    [data-order="8"]:before {top: auto;bottom: 20%;left: 50%;}
+    [data-order="9"]:before {top: 2%;left: 85%;}
+    [data-order="10"]:before {bottom: 4%;top:auto!important;left: 50%;}
+    [data-order="11"]:before {bottom: 4%;left: 50%;top: auto;}
+    [data-order="12"]:before {bottom: 4%;left: 50%;top: auto;}
+    [data-order="13"]:before {left: 50%;}
+    [data-order="14"]:before {left: 50%;}
+    [data-order="15"]:before {top: 3%;right:3%}
+    [data-order="16"]:before {top:auto!important;bottom:2%;left: 50%;}
+    [data-order="17"]:before {left: 0;top:2%;}
+    [data-order="18"]:before {top:auto!important;bottom:2%;left: 50%;}
+    [data-order="18"]:before {top:auto!important;bottom:2%;left: 50%;}
+    [data-order="19"] {position:relative;}
+    [data-order="19"]:before {top:14%!important;left: 18%;}
+    [data-order="20"]:before {top:auto!important;bottom:13%;left: 50%;}
+
+    @keyframes circle {
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+</style>
 <body>
     <div id="wrap">
         <header class="gnb-m">
@@ -18,7 +56,7 @@
         <main>
             <div class="info">
                 <img src="assets/image/main1/1.png" alt="" class="scroll-eff">
-                <button type="button" class="down-btn scroll-eff"><img src="assets/image/main1/1-1.png" alt=""></button>
+                <button type="button" class="down-btn scroll-eff click-point" data-order="1"><img src="assets/image/main1/1-1.png" alt=""></button>
             </div>
 
             <div class="main-box">
@@ -54,7 +92,7 @@
                                         </button>
                                     </li>
                                     <li role="presentation">
-                                        <button type="button" id="sub-tabs-tab-2" role="tab" aria-selected="false" aria-controls="sub-tabs-panel-2" tabindex="-1">
+                                        <button type="button" id="sub-tabs-tab-2" role="tab" aria-selected="false" aria-controls="sub-tabs-panel-2" tabindex="-1" class="click-point" data-order="19">
                                             <img src="assets/image/main1/tab2.png" alt="">
                                             <img src="assets/image/main1/tab2-active.png" alt="" class="active">
                                         </button>
@@ -72,7 +110,7 @@
                                     </li>
                                     <li role="presentation">
                                         <button type="button" id="sub-tabs-tab-5" role="tab" aria-selected="false" aria-controls="sub-tabs-panel-5" tabindex="-1" style="pointer-events: none;">
-                                             <img src="assets/image/main1/tab5.png" alt="">
+                                            <img src="assets/image/main1/tab5.png" alt="">
                                         </button>
                                     </li>
                                 </ul>
@@ -83,10 +121,10 @@
                                         <a href="" class="trigger-pop reveal"><img src="assets/image/main1/5.png" alt=""></a>
                                         <a href="" class="check-pop reveal"><img src="assets/image/main1/6.png" alt=""></a>
                                         <a href="" class="reveal"><img  src="assets/image/main1/7.png" alt=""></a>
-                                        <a href="" class="box3-btn reveal"><img src="assets/image/main1/8.png" alt=""></a>
-                                        <a href="" class="box2-btn reveal"><img src="assets/image/main1/9.png" alt=""></a>
+                                        <a href="" class="box3-btn reveal click-point" data-order="10"><img src="assets/image/main1/8.png" alt=""></a>
+                                        <a href="" class="box2-btn reveal click-point" data-order="16"><img src="assets/image/main1/9.png" alt=""></a>
                                         <a href="" class="reveal" ><img src="assets/image/main1/10.png" alt=""></a>
-                                        <a href="" class="album-btn reveal"><img src="assets/image/main1/11.png" alt=""></a>
+                                        <a href="" class="album-btn reveal click-point" data-order="18"><img src="assets/image/main1/11.png" alt=""></a>
                                     </div>
 
                                     <!-- 기록 -->
@@ -95,7 +133,7 @@
                                             <div class="box reveal"><img src="assets/image/sub/history1.png" alt=""></div>
                                             <div class="box reveal"><img src="assets/image/sub/history2.png" alt=""></div>
                                             <div class="box reveal"><img src="assets/image/sub/history3.png" alt=""></div>
-                                            <div class="box reveal"><a href="insurance.html"><img src="assets/image/sub/history4.png" alt=""></a></div>
+                                            <div class="box reveal click-point" data-order="20"><a href="insurance.html"><img src="assets/image/sub/history4.png" alt=""></a></div>
                                             <div class="box reveal"><img src="assets/image/sub/history5.png" alt=""></div>
                                         </div>
                                     </div>
@@ -163,28 +201,28 @@
             </div>
 
             <div class="open-pop">
-                <button type="button"><img src="assets/image/main1/13.png" alt=""></button>
+                <button type="button" class="click-point" data-order="2"><img src="assets/image/main1/13.png" alt=""></button>
             </div>
 
             <div class="box1">
                 <img src="assets/image/main1/14.png" alt="" class="box1-top">
                 <img src="assets/image/main1/close.png" alt="" class="box1-close">
 
-                <div class="box1-in">
+                <div class="box1-in click-point" data-order="6">
                     <img src="assets/image/main1/15.png" alt="">
-                    <button type="button"><img src="assets/image/main1/16.png" alt="">꼬미 사진자랑하기</button>
+                    <button type="button" class="click-point" data-order="3"><img src="assets/image/main1/16.png" alt="">꼬미 사진자랑하기</button>
                 </div>
 
                 <img src="assets/image/main1/17.png" alt="" class="box1-bottom">
 
-                <button type="button" class="box1-pop1"><img src="assets/image/main1/18.png" alt=""></button>
+                <button type="button" class="box1-pop1 click-point" data-order="4"><img src="assets/image/main1/18.png" alt=""></button>
 
                 <div class="box1-pop2">
-                    <button type="button"><img src="assets/image/main1/19.png" alt=""><img src="assets/image/main1/20.png" alt=""></button>
+                    <button type="button" class="click-point" data-order="5"><img src="assets/image/main1/19.png" alt=""><img src="assets/image/main1/20.png" alt=""></button>
                 </div>
 
                 <div class="box1-pop3">
-                    <button type="button"><img src="assets/image/main1/21.png" alt=""></button>
+                    <button type="button" class="click-point" data-order="7"><img src="assets/image/main1/21.png" alt=""></button>
                 </div>
 
                 <div class="box1-pop4 type1">
@@ -195,12 +233,12 @@
                         <img src="assets/image/main1/24.png" alt="" class="foot">
                         <img src="assets/image/main1/24-1.png" alt="" class="star bottom">
                     </p>
-                    <button type="button">
+                    <button type="button" class="click-point" data-order="8">
                         <img src="assets/image/main1/23.png" alt="">
                     </button>
                 </div>
 
-                <div class="box1-pop5 type2">
+                <div class="box1-pop5 type2 click-point" data-order="9">
                     <img src="assets/image/main1/25-1.png" alt="" class="bg25-1">
                     <img src="assets/image/main1/25-2.png" alt="" class="bg25-2 sc">
                     <img src="assets/image/main1/25-3.png" alt="" class="bg25-3 sc">
@@ -213,17 +251,17 @@
             </div>
 
             <div class="box2">
-                <button type="button"><img src="assets/image/main1/26.png" alt=""></button>
+                <button type="button" class="click-point" data-order="17"><img src="assets/image/main1/26.png" alt=""></button>
             </div>
 
             <div class="box3">
-                <button type="button" class="box3-step1">
+                <button type="button" class="box3-step1 click-point" data-order="11">
                     <p>
                         <img src="assets/image/main1/27-1.png" alt="">
                         <img src="assets/image/main1/27-2.png" alt="">
                     </p>
                 </button>
-                <button type="button" class="box3-step2">
+                <button type="button" class="box3-step2 click-point" data-order="12">
                     <p>
                         <img src="assets/image/main1/28.png" alt="">
                         <img src="assets/image/main1/27-2.png" alt="">
@@ -238,7 +276,7 @@
                         <img src="assets/image/main1/24.png" alt="" class="foot">
                         <img src="assets/image/main1/24-1.png" alt="" class="star bottom">
                     </p>
-                    <button type="button">
+                    <button type="button" class="click-point" data-order="13">
                         <img src="assets/image/main1/23.png" alt="">
                     </button>
                 </div>
@@ -249,13 +287,13 @@
                     <img src="assets/image/main1/25-3.png" alt="" class="bg25-3 sc">
                     <img src="assets/image/main1/25-4.png" alt="" class="bg25-4 sc">
                     <img src="assets/image/main1/25-5.png" alt="" class="bg25-5 sc">
-                    <button type="button">
+                    <button type="button" class="click-point" data-order="14">
                         <img src="assets/image/main1/25-btn.png" alt="">
                     </button>
                     <img src="assets/image/main1/close.png" alt="" class="box1-close">
                 </div>
 
-                <div class="box3-step5">
+                <div class="box3-step5 click-point" data-order="15">
                     <img src="assets/image/main1/31-1.png" alt="">
                     <img src="assets/image/main1/31-2.png" alt="">
                     <img src="assets/image/main1/31-3.png" alt="">
@@ -570,4 +608,30 @@
         window.addEventListener("scroll", checkElemVisibility);
         window.addEventListener("resize", checkElemVisibility);
     });
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const clickPoints = Array.from(document.querySelectorAll('.click-point[data-order]'))
+        .sort((a, b) => (parseInt(a.dataset.order, 10) || 0) - (parseInt(b.dataset.order, 10) || 0));
+
+    if (clickPoints.length === 0) return;
+
+    let currentIndex = 0;
+    clickPoints[0].classList.add('show');
+
+    clickPoints.forEach((el, idx) => {
+        el.addEventListener('click', () => {
+        if (!el.classList.contains('show')) return;
+
+        el.classList.remove('show');
+
+        currentIndex = idx + 1;
+        if (currentIndex < clickPoints.length) {
+            clickPoints[currentIndex].classList.add('show');
+        } else {
+            console.log('끝');
+        }
+        });
+    });
+});
 </script>
